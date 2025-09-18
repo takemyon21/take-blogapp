@@ -55,3 +55,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# Use Sass for stylesheets
+gem "sassc-rails"
