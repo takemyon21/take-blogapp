@@ -10,7 +10,7 @@
   </div>
 
   <% @articles.each do |article| %>
-    <%= link_to article_path(id: article.id) do %> #article_path(article)でもOK
+    <%= link_to article_path(id: article.id) do %> <%# article_path(article)でもOK %>
       <div class="card">
         <div class="card_image">
           <%= image_tag 'eyecatch1.png' %>
@@ -33,5 +33,11 @@
         </div>
       </div>
     <% end %>
+  <% end %>
+
+  <%= link_to new_article_path do %>
+    <div class="float_btn">
+      <i class="fa fa-plus"></i>
+    </div>
   <% end %>
 </div>
