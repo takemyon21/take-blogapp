@@ -59,3 +59,5 @@ end
 
 # Use Sass for stylesheets
 gem "sassc-rails"
+
+gem "importmap-rails", "~> 2.2"
