@@ -14,7 +14,7 @@ class Article < ApplicationRecord
   validates :title, format: { with: /\A(?!\@)/ }
 
   validates :content, presence: true
-  validates :content, length: { minimum: 10}
+  validates :content, length: { minimum: 10 }
   validates :content, uniqueness: true
 
   validate :validate_title_and_content_length
@@ -27,7 +27,7 @@ class Article < ApplicationRecord
   def validate_title_and_content_length
     char_content = self.title.length + self.content.length
     unless char_content >= 100
-      errors.add(:content, "100文字いじょうで！")
+      errors.add(:content, '100文字いじょうで！')
     end
   end
 end
