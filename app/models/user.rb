@@ -21,4 +21,16 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :articles, dependent: :destroy
+
+  def has_written?(article)
+    articles.exists?(id: article.id)
+  end
+
+  # take@itouke.info
+  def display_name
+    self.email.split('@').first
+    # => {"take", "itouke.info"} の最初の要素を返す
+  end
 end
